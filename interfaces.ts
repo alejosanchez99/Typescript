@@ -37,3 +37,58 @@ const shoes: Product = {
 };
 
 console.log(shoes.applyDiscount(0.4));
+
+interface Dog1 {
+  name: string;
+  age: number;
+}
+
+interface Dog1 {
+  breed: string;
+  bark(): string;
+}
+
+const elton: Dog1 = {
+  name: "Elton",
+  age: 0.5,
+  breed: "Australian Shepered",
+  bark() {
+    return "WOOF WOOF!";
+  },
+};
+
+interface ServiceDog extends Dog1 {
+  job: "drug sniffer" | "bomb" | "guide dog";
+}
+
+const chewy: ServiceDog = {
+  name: "Chewy",
+  age: 4.5,
+  breed: "Lab",
+  bark() {
+    return "Bark!";
+  },
+  job: "guide dog",
+};
+
+interface Human {
+  name: string;
+}
+
+interface Employee {
+  readonly id: number;
+  email: string;
+}
+
+interface Engineer extends Human, Employee {
+  level: string;
+  languages: string[];
+}
+
+const pierre: Engineer = {
+  name: "Pierre",
+  id: 21323,
+  email: "Pierre",
+  level: "senior",
+  languages: ["JS", "Python"],
+};
